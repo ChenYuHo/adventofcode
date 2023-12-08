@@ -2,6 +2,7 @@
 cd "$( dirname "${BASH_SOURCE[0]}" )"
 if [[ -f day01.py ]]; then
   largest_day=$(ls day*.py | grep -oE '\d+' | sort -n | tail -n 1)
+  largest_day=$((10#$largest_day))  # Convert to base-10
   next_day=$(printf "%02d" $((largest_day + 1)))
 else
   next_day="01"
